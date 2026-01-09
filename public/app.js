@@ -27,16 +27,14 @@ async function sendMessage() {
     
     if (!message) return;
     
-    // Afficher message utilisateur
     addMessage(message, 'user');
     input.value = '';
     
-    // Loading
     document.getElementById('loading').classList.remove('hidden');
     document.getElementById('send-btn').disabled = true;
     
     try {
-        // 1. Obtenir la réponse texte de César
+        // 1. Obtenir la réponse texte
         const chatResponse = await fetch('/.netlify/functions/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -49,11 +47,12 @@ async function sendMessage() {
         const chatData = await chatResponse.json();
         const cesarText = chatData.response;
         
-        // Afficher réponse César
         addMessage(cesarText, 'cesar');
         
-        // 2. Convertir en audio
-        const ttsResponse = await fetch('/.netlify/functions/tts', {
+        // 2. Générer vidéo parlante
+        document.getElementById('loading').textContent = 'César prépare sa réponse vidéo...';
+        
+        const videoResponse = await fetch('/.netlify/functions/talking-head', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -62,19 +61,28 @@ async function sendMessage() {
             })
         });
         
-        const ttsData = await ttsResponse.json();
+        const videoData = await videoResponse.json();
         
-        // 3. Jouer l'audio
-        const audio = new Audio(ttsData.audio);
-        audio.play();
+        // 3. Afficher et jouer la vidéo
+        showVideo(videoData.videoUrl);
         
     } catch (error) {
         addMessage('Erreur de connexion. Réessayez.', 'cesar');
         console.error(error);
     }
     
-    document.getElementById('loading').classList.remove('hidden');
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('loading').textContent = 'César réfléchit...';
     document.getElementById('send-btn').disabled = false;
+}
+
+function showVideo(videoUrl) {
+    const avatarDiv = document.querySelector('.avatar');
+    avatarDiv.innerHTML = `
+        <video autoplay controls style="max-width: 400px; border-radius: 10px;">
+            <source src="${videoUrl}" type="video/mp4">
+        </video>
+    `;
 }
 
 function addMessage(text, sender) {
