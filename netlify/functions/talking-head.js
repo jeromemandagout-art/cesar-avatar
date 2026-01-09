@@ -31,7 +31,7 @@ exports.handler = async (event) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                source_url: 'https://ton-site.netlify.app/cesar.png', // URL de ton image César
+                source_url: 'https://6960e4e68fd4d1000862a6d4--cesar-avatar.netlify.app/cesar.png', // URL de ton image César
                 script: {
                     type: 'text',
                     input: text,
