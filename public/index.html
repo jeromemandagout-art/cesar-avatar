@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>César Parle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="avatar">
+            <img src="https://via.placeholder.com/300x400/8B4513/FFFFFF?text=CESAR" alt="César">
+        </div>
+        
+        <div class="language-selector">
+            <button id="btn-fr" class="active">Français</button>
+            <button id="btn-en">English</button>
+        </div>
+        
+        <div class="chat-box">
+            <div id="messages"></div>
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Posez votre question à César...">
+            <button id="send-btn">Envoyer</button>
+        </div>
+        
+        <div id="loading" class="hidden">César réfléchit...</div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
