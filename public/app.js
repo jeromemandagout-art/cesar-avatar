@@ -1,12 +1,21 @@
 let currentLanguage = 'fr';
 let showText = true;
 let questions = {};
+let videoManifest = {};
 
-// Charger les questions au démarrage
+// Charger les questions et le manifest vidéo
 async function loadQuestions() {
-    const response = await fetch('questions.json');
-    questions = await response.json();
-    updateQuickQuestions();
+    try {
+        const questionsResponse = await fetch('questions.json');
+        questions = await questionsResponse.json();
+        
+        const manifestResponse = await fetch('videos/manifest.json');
+        videoManifest = await manifestResponse.json();
+        
+        updateQuickQuestions();
+    } catch (error) {
+        console.error('Erreur chargement:', error);
+    }
 }
 
 // Afficher les boutons de questions
@@ -19,8 +28,17 @@ function updateQuickQuestions() {
         btn.className = 'question-btn';
         btn.textContent = q.titre;
         btn.onclick = () => {
-            document.getElementById('user-input').value = q.message;
-            sendMessage();
+            // Jouer directement la vidéo pré-générée
+            playPreGeneratedVideo(q.videoId);
+            
+            // Afficher le texte si activé
+            if (showText) {
+                addMessage(q.message, 'user');
+                const videoInfo = videoManifest[currentLanguage][q.videoId];
+                if (videoInfo) {
+                    addMessage(videoInfo.text, 'cesar');
+                }
+            }
         };
         container.appendChild(btn);
     });
@@ -68,7 +86,7 @@ document.getElementById('btn-en').addEventListener('click', () => {
     updateQuickQuestions();
 });
 
-// Envoi message
+// Envoi message (questions personnalisées - utilise l'API)
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 document.getElementById('user-input').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
@@ -80,18 +98,16 @@ async function sendMessage() {
     
     if (!message) return;
     
-    // Afficher message utilisateur (si texte activé)
     if (showText) {
         addMessage(message, 'user');
     }
     input.value = '';
     
-    // Loading
     document.getElementById('loading').classList.remove('hidden');
     document.getElementById('send-btn').disabled = true;
     
     try {
-        // 1. Obtenir la réponse texte
+        // Obtenir réponse de l'API Claude
         const chatResponse = await fetch('/.netlify/functions/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -104,34 +120,46 @@ async function sendMessage() {
         const chatData = await chatResponse.json();
         const cesarText = chatData.response;
         
-        // Afficher réponse César (si texte activé)
         if (showText) {
             addMessage(cesarText, 'cesar');
         }
         
-        // 2. Générer vidéo parlante
-        document.getElementById('loading').textContent = currentLanguage === 'fr'
-            ? 'César prépare sa réponse vidéo...'
-            : 'Caesar is preparing his video response...';
+        // Vérifier si César ne comprend pas (jouer vidéo d'erreur)
+        const keywords = currentLanguage === 'fr' 
+            ? ['ne comprends pas', 'incompréhensible', 'reformule', 'pas sûr', 'difficile']
+            : ['do not understand', 'unclear', 'rephrase', 'not sure', 'difficult'];
         
-        const videoResponse = await fetch('/.netlify/functions/talking-head', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                text: cesarText,
-                language: currentLanguage
-            })
-        });
+        const isError = keywords.some(kw => cesarText.toLowerCase().includes(kw));
         
-        const videoData = await videoResponse.json();
-        
-        // 3. Afficher et jouer la vidéo
-        showVideo(videoData.videoUrl);
+        if (isError) {
+            const errorVideoId = currentLanguage === 'fr' ? 'error_fr' : 'error_en';
+            playPreGeneratedVideo(errorVideoId);
+        } else {
+            // Générer vidéo via API (question personnalisée)
+            document.getElementById('loading').textContent = currentLanguage === 'fr'
+                ? 'César prépare sa réponse vidéo...'
+                : 'Caesar is preparing his video response...';
+            
+            const videoResponse = await fetch('/.netlify/functions/talking-head', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    text: cesarText,
+                    language: currentLanguage
+                })
+            });
+            
+            const videoData = await videoResponse.json();
+            showVideo(videoData.videoUrl);
+        }
         
     } catch (error) {
         if (showText) {
             addMessage('Erreur de connexion. Réessayez.', 'cesar');
         }
+        // Jouer vidéo d'erreur
+        const errorVideoId = currentLanguage === 'fr' ? 'error_fr' : 'error_en';
+        playPreGeneratedVideo(errorVideoId);
         console.error(error);
     }
     
@@ -140,6 +168,16 @@ async function sendMessage() {
         ? 'César réfléchit...'
         : 'Caesar is thinking...';
     document.getElementById('send-btn').disabled = false;
+}
+
+function playPreGeneratedVideo(videoId) {
+    const videoInfo = videoManifest[currentLanguage][videoId];
+    if (!videoInfo) {
+        console.error('Vidéo non trouvée:', videoId);
+        return;
+    }
+    
+    showVideo(videoInfo.path);
 }
 
 function addMessage(text, sender) {
@@ -151,7 +189,7 @@ function addMessage(text, sender) {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-function showVideo(videoUrl) {
+function showVideo(videoPath) {
     const avatarDiv = document.querySelector('.avatar');
     
     avatarDiv.innerHTML = `
@@ -165,7 +203,7 @@ function showVideo(videoUrl) {
             "
             onended="resetAvatar()"
         >
-            <source src="${videoUrl}" type="video/mp4">
+            <source src="${videoPath}" type="video/mp4">
         </video>
     `;
 }
@@ -177,5 +215,5 @@ function resetAvatar() {
     `;
 }
 
-// Charger les questions au démarrage
+// Charger au démarrage
 loadQuestions();
