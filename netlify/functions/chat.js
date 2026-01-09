@@ -16,10 +16,9 @@ exports.handler = async (event) => {
     
     try {
         console.log('Raw body:', event.body);
-        const { message, language } = JSON.parse(event.body);
+        const { message, language, systemPrompt } = JSON.parse(event.body);
         console.log('Message:', message, 'Language:', language);
         
-        // Vérifier que la clé API existe
         if (!process.env.ANTHROPIC_API_KEY) {
             console.error('ANTHROPIC_API_KEY is missing!');
             return {
@@ -30,9 +29,10 @@ exports.handler = async (event) => {
         
         console.log('API Key exists:', process.env.ANTHROPIC_API_KEY.substring(0, 10) + '...');
         
-        const systemPrompt = language === 'fr' 
-            ? "Tu es Jules César, général et homme d'État romain. Tu parles à la première personne de tes conquêtes et de Rome antique. Réponds de manière pédagogique mais avec autorité. Maximum 30 mots."
-            : "You are Julius Caesar, Roman general and statesman. Speak in first person about your conquests and Ancient Rome. Answer pedagogically but with authority. Maximum 30 words.";
+        // Utiliser le systemPrompt fourni ou celui par défaut
+        const finalSystemPrompt = systemPrompt || (language === 'fr' 
+            ? "Tu es Jules César, général et homme d'État romain. Tu parles à la première personne de tes conquêtes et de Rome antique. Réponds de manière pédagogique mais avec autorité. IMPORTANT : Maximum 30 mots par réponse."
+            : "You are Julius Caesar, Roman general and statesman. Speak in first person about your conquests and Ancient Rome. Answer pedagogically but with authority. IMPORTANT: Maximum 30 words per response.");
         
         console.log('Calling Anthropic API...');
         
@@ -46,7 +46,7 @@ exports.handler = async (event) => {
             body: JSON.stringify({
                 model: 'claude-sonnet-4-20250514',
                 max_tokens: 60,
-                system: systemPrompt,
+                system: finalSystemPrompt,
                 messages: [{
                     role: 'user',
                     content: message

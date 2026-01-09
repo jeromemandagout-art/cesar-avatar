@@ -14,52 +14,58 @@ exports.handler = async (event) => {
     }
     
     try {
-        const { text, language } = JSON.parse(event.body);
+        const { text, language, imageUrl } = JSON.parse(event.body);
+        console.log('Text to convert:', text.substring(0, 50) + '...');
         
         if (!process.env.DID_API_KEY) {
+            console.error('DID_API_KEY is missing!');
             return {
                 statusCode: 500,
                 body: JSON.stringify({ error: 'D-ID API key not configured' })
             };
         }
         
-        // 1. Créer la vidéo parlante
-        const createResponse = await fetch('https://api.d-id.com/talks', {
+        // Utiliser l'image fournie ou celle par défaut (César)
+        const finalImageUrl = imageUrl || `${process.env.URL}/personnages/cesar/image.png`;
+        
+        const voiceId = 'pNInz6obpgDQGcFmaJgB';
+        
+        const response = await fetch('https://api.d-id.com/talks', {
             method: 'POST',
             headers: {
                 'Authorization': `Basic ${process.env.DID_API_KEY}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                source_url: 'https://6960e4e68fd4d1000862a6d4--cesar-avatar.netlify.app/cesar.png', // URL de ton image César
+                source_url: finalImageUrl,
                 script: {
                     type: 'text',
                     input: text,
                     provider: {
                         type: 'elevenlabs',
-                        voice_id: 'pNInz6obpgDQGcFmaJgB' // Voix ElevenLabs
+                        voice_id: voiceId
                     }
                 },
                 config: {
-                    fluent: false,  // Au lieu de true - génération plus rapide
+                    fluent: false,
                     pad_audio: 0,
-                    stitch: true    // Optimise la génération
+                    stitch: true
                 }
             })
         });
         
-        const createData = await createResponse.json();
+        const createData = await response.json();
         const talkId = createData.id;
         
         console.log('Video creation started:', talkId);
         
-        // 2. Attendre que la vidéo soit prête (polling)
+        // Polling
         let videoUrl = null;
         let attempts = 0;
         const maxAttempts = 30;
         
         while (!videoUrl && attempts < maxAttempts) {
-            await new Promise(resolve => setTimeout(resolve, 2000)); // Attendre 2 sec
+            await new Promise(resolve => setTimeout(resolve, 2000));
             
             const statusResponse = await fetch(`https://api.d-id.com/talks/${talkId}`, {
                 headers: {
