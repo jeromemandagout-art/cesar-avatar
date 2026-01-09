@@ -1,0 +1,66 @@
+{
+  "fr": {
+    "q1_fr": {
+      "id": "q1_fr",
+      "path": "videos/q1_fr.mp4",
+      "text": "Je suis Flavius Lucernarius, maître lampiste. Je façonne des lampes à huile en argile pour éclairer les foyers romains et les temples."
+    },
+    "q2_fr": {
+      "id": "q2_fr",
+      "path": "videos/q2_fr.mp4",
+      "text": "Je moule l'argile dans des formes, j'ajoute un bec verseur pour la mèche, je décore puis je cuis au four à haute température."
+    },
+    "q3_fr": {
+      "id": "q3_fr",
+      "path": "videos/q3_fr.mp4",
+      "text": "J'utilise de l'huile d'olive principalement. Les riches utilisent parfois des huiles parfumées. La mèche est en lin ou en papyrus tressé."
+    },
+    "q4_fr": {
+      "id": "q4_fr",
+      "path": "videos/q4_fr.mp4",
+      "text": "J'aime décorer mes lampes de scènes mythologiques, de gladiateurs ou de motifs floraux. Chaque lampe raconte une petite histoire gravée dans l'argile."
+    },
+    "q5_fr": {
+      "id": "q5_fr",
+      "path": "videos/q5_fr.mp4",
+      "text": "Mes clients sont les familles romaines, les boutiques, les thermes publics et les temples. Tout le monde a besoin de lumière après le coucher du soleil."
+    },
+    "error_fr": {
+      "id": "error_fr",
+      "path": "videos/error_fr.mp4",
+      "text": "Je ne comprends pas ta question. Reformule ou choisis parmi les questions proposées ci-dessous."
+    }
+  },
+  "en": {
+    "q1_en": {
+      "id": "q1_en",
+      "path": "videos/q1_en.mp4",
+      "text": "I am Flavius Lucernarius, master lamp maker. I craft oil lamps from clay to light Roman homes and temples."
+    },
+    "q2_en": {
+      "id": "q2_en",
+      "path": "videos/q2_en.mp4",
+      "text": "I mold clay into forms, add a spout for the wick, decorate, then fire at high temperature in my kiln."
+    },
+    "q3_en": {
+      "id": "q3_en",
+      "path": "videos/q3_en.mp4",
+      "text": "I mainly use olive oil. The wealthy sometimes use scented oils. The wick is made of twisted linen or papyrus."
+    },
+    "q4_en": {
+      "id": "q4_en",
+      "path": "videos/q4_en.mp4",
+      "text": "I love decorating my lamps with mythological scenes, gladiators or floral patterns. Each lamp tells a small story engraved in clay."
+    },
+    "q5_en": {
+      "id": "q5_en",
+      "path": "videos/q5_en.mp4",
+      "text": "My clients are Roman families, shops, public baths and temples. Everyone needs light after sunset in the empire."
+    },
+    "error_en": {
+      "id": "error_en",
+      "path": "videos/error_en.mp4",
+      "text": "I do not understand your question. Rephrase or choose from the suggested questions below."
+    }
+  }
+}
