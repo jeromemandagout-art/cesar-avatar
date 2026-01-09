@@ -3,44 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>César Parle</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Rencontres Antiques - Musée de la Romanité</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .personnages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .personnage-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .personnage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .personnage-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+
+        .personnage-nom {
+            font-size: 22px;
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 8px;
+        }
+
+        .personnage-titre {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .personnage-description {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .personnages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="avatar">
-            <img src="cesar.png" alt="César" style="width: 200px; height: 300px; border-radius: 10px; object-fit: cover;">
-        </div>
-        
-        <div class="language-selector">
-            <button id="btn-fr" class="active">Français</button>
-            <button id="btn-en">English</button>
+    <div class="header">
+        <h1>🏛️ Rencontres Antiques</h1>
+        <p>Qui voulez-vous rencontrer aujourd'hui ?</p>
+    </div>
+
+    <div class="personnages-grid">
+        <!-- César -->
+        <div class="personnage-card" onclick="window.location.href='personnages/cesar/'">
+            <div class="personnage-icon">👑</div>
+            <div class="personnage-nom">Jules César</div>
+            <div class="personnage-titre">Général et Homme d'État</div>
+            <div class="personnage-description">
+                Découvrez le conquérant de la Gaule et ses exploits militaires
+            </div>
         </div>
 
-        <!-- Toggle affichage texte -->
-        <div class="toggle-container">
-            <label class="toggle-switch">
-                <input type="checkbox" id="toggle-text" checked>
-                <span class="toggle-slider"></span>
-            </label>
-            <span id="toggle-label">Afficher les réponses texte</span>
+        <!-- Fresquiste -->
+        <div class="personnage-card" onclick="window.location.href='personnages/fresquiste/'">
+            <div class="personnage-icon">🎨</div>
+            <div class="personnage-nom">Lucius Pictor</div>
+            <div class="personnage-titre">Maître Fresquiste</div>
+            <div class="personnage-description">
+                Apprenez l'art de la fresque et des pigments romains
+            </div>
         </div>
-        
-        <!-- Questions prédéfinies -->
-        <div class="quick-questions" id="quick-questions"></div>
-        
-        <div class="chat-box" id="chat-box">
-            <div id="messages"></div>
+
+        <!-- Mosaïste -->
+        <div class="personnage-card" onclick="window.location.href='personnages/mosaiste/'">
+            <div class="personnage-icon">🖼️</div>
+            <div class="personnage-nom">Marcus Tessellarius</div>
+            <div class="personnage-titre">Maître Mosaïste</div>
+            <div class="personnage-description">
+                Découvrez l'art de créer des mosaïques avec des milliers de tesselles
+            </div>
         </div>
-        
-        <div class="input-area">
-            <input type="text" id="user-input" placeholder="Posez votre question à César...">
-            <button id="send-btn">Envoyer</button>
+
+        <!-- Tisserand -->
+        <div class="personnage-card" onclick="window.location.href='personnages/tisserand/'">
+            <div class="personnage-icon">🧵</div>
+            <div class="personnage-nom">Gaius Textor</div>
+            <div class="personnage-titre">Maître Tisserand</div>
+            <div class="personnage-description">
+                Explorez le tissage de la laine et la création de toges
+            </div>
         </div>
-        
-        <div id="loading" class="hidden">César réfléchit...</div>
+
+        <!-- Tabletier -->
+        <div class="personnage-card" onclick="window.location.href='personnages/tabletier/'">
+            <div class="personnage-icon">🎲</div>
+            <div class="personnage-nom">Publius Eborarius</div>
+            <div class="personnage-titre">Artisan Tabletier</div>
+            <div class="personnage-description">
+                Découvrez l'art de sculpter l'os et l'ivoire
+            </div>
+        </div>
+
+        <!-- Verrier -->
+        <div class="personnage-card" onclick="window.location.href='personnages/verrier/'">
+            <div class="personnage-icon">🍶</div>
+            <div class="personnage-nom">Quintus Vitrarius</div>
+            <div class="personnage-titre">Maître Verrier</div>
+            <div class="personnage-description">
+                Apprenez la magie du verre soufflé romain
+            </div>
+        </div>
+
+        <!-- Céramiste -->
+        <div class="personnage-card" onclick="window.location.href='personnages/ceramiste/'">
+            <div class="personnage-icon">🏺</div>
+            <div class="personnage-nom">Titus Figulus</div>
+            <div class="personnage-titre">Potier Céramiste</div>
+            <div class="personnage-description">
+                Découvrez la céramique sigillée et le tour de potier
+            </div>
+        </div>
     </div>
-    
-    <script src="app.js"></script>
 </body>
 </html>

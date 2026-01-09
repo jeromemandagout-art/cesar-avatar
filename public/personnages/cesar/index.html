@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>César Parle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="avatar">
+            <img src="cesar.png" alt="César" style="width: 200px; height: 300px; border-radius: 10px; object-fit: cover;">
+        </div>
+        
+        <div class="language-selector">
+            <button id="btn-fr" class="active">Français</button>
+            <button id="btn-en">English</button>
+        </div>
+
+        <!-- Toggle affichage texte -->
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="toggle-text" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <span id="toggle-label">Afficher les réponses texte</span>
+        </div>
+        
+        <!-- Questions prédéfinies -->
+        <div class="quick-questions" id="quick-questions"></div>
+        
+        <div class="chat-box" id="chat-box">
+            <div id="messages"></div>
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Posez votre question à César...">
+            <button id="send-btn">Envoyer</button>
+        </div>
+        
+        <div id="loading" class="hidden">César réfléchit...</div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
