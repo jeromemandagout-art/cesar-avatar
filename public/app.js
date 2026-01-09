@@ -33,10 +33,11 @@ async function sendMessage() {
     
     // Loading
     document.getElementById('loading').classList.remove('hidden');
+    document.getElementById('send-btn').disabled = true;
     
     try {
-        // Appel API Netlify Function
-        const response = await fetch('/.netlify/functions/chat', {
+        // 1. Obtenir la réponse texte de César
+        const chatResponse = await fetch('/.netlify/functions/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -45,17 +46,35 @@ async function sendMessage() {
             })
         });
         
-        const data = await response.json();
+        const chatData = await chatResponse.json();
+        const cesarText = chatData.response;
         
         // Afficher réponse César
-        addMessage(data.response, 'cesar');
+        addMessage(cesarText, 'cesar');
+        
+        // 2. Convertir en audio
+        const ttsResponse = await fetch('/.netlify/functions/tts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                text: cesarText,
+                language: currentLanguage
+            })
+        });
+        
+        const ttsData = await ttsResponse.json();
+        
+        // 3. Jouer l'audio
+        const audio = new Audio(ttsData.audio);
+        audio.play();
         
     } catch (error) {
         addMessage('Erreur de connexion. Réessayez.', 'cesar');
         console.error(error);
     }
     
-    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('loading').classList.remove('hidden');
+    document.getElementById('send-btn').disabled = false;
 }
 
 function addMessage(text, sender) {
