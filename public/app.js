@@ -78,10 +78,33 @@ async function sendMessage() {
 
 function showVideo(videoUrl) {
     const avatarDiv = document.querySelector('.avatar');
+    
+    // Sauvegarder l'image originale pour la remettre après
+    const originalImg = avatarDiv.querySelector('img');
+    const imgWidth = originalImg ? originalImg.offsetWidth : 200;
+    const imgHeight = originalImg ? originalImg.offsetHeight : 300;
+    
     avatarDiv.innerHTML = `
-        <video autoplay controls style="max-width: 400px; border-radius: 10px;">
+        <video 
+            autoplay 
+            style="
+                width: ${imgWidth}px; 
+                height: ${imgHeight}px; 
+                border-radius: 10px;
+                object-fit: cover;
+            "
+            onended="resetAvatar()"
+        >
             <source src="${videoUrl}" type="video/mp4">
         </video>
+    `;
+}
+
+// Fonction pour remettre l'image après la vidéo
+function resetAvatar() {
+    const avatarDiv = document.querySelector('.avatar');
+    avatarDiv.innerHTML = `
+        <img src="cesar.png" alt="César" style="max-width: 200px; border-radius: 10px;">
     `;
 }
 
