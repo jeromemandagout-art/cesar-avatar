@@ -194,7 +194,8 @@ function showVideo(videoPath) {
     
     avatarDiv.innerHTML = `
         <video 
-            autoplay 
+            autoplay
+            poster="cesar.png" 
             style="
                 width: 200px; 
                 height: 300px; 
