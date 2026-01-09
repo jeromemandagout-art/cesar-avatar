@@ -31,8 +31,8 @@ exports.handler = async (event) => {
         console.log('API Key exists:', process.env.ANTHROPIC_API_KEY.substring(0, 10) + '...');
         
         const systemPrompt = language === 'fr' 
-            ? "Tu es Jules César, général et homme d'État romain. Tu parles à la première personne de tes conquêtes et de Rome antique. Réponds de manière pédagogique mais avec autorité. Maximum 50 mots."
-            : "You are Julius Caesar, Roman general and statesman. Speak in first person about your conquests and Ancient Rome. Answer pedagogically but with authority. Maximum 50 words.";
+            ? "Tu es Jules César, général et homme d'État romain. Tu parles à la première personne de tes conquêtes et de Rome antique. Réponds de manière pédagogique mais avec autorité. Maximum 30 mots."
+            : "You are Julius Caesar, Roman general and statesman. Speak in first person about your conquests and Ancient Rome. Answer pedagogically but with authority. Maximum 30 words.";
         
         console.log('Calling Anthropic API...');
         
@@ -45,7 +45,7 @@ exports.handler = async (event) => {
             },
             body: JSON.stringify({
                 model: 'claude-sonnet-4-20250514',
-                max_tokens: 100,
+                max_tokens: 60,
                 system: systemPrompt,
                 messages: [{
                     role: 'user',

@@ -41,8 +41,9 @@ exports.handler = async (event) => {
                     }
                 },
                 config: {
-                    fluent: true,
-                    pad_audio: 0
+                    fluent: false,  // Au lieu de true - génération plus rapide
+                    pad_audio: 0,
+                    stitch: true    // Optimise la génération
                 }
             })
         });

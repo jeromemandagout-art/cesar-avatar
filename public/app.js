@@ -1,4 +1,49 @@
 let currentLanguage = 'fr';
+let showText = true;
+let questions = {};
+
+// Charger les questions au démarrage
+async function loadQuestions() {
+    const response = await fetch('questions.json');
+    questions = await response.json();
+    updateQuickQuestions();
+}
+
+// Afficher les boutons de questions
+function updateQuickQuestions() {
+    const container = document.getElementById('quick-questions');
+    container.innerHTML = '';
+    
+    questions[currentLanguage].forEach(q => {
+        const btn = document.createElement('button');
+        btn.className = 'question-btn';
+        btn.textContent = q.titre;
+        btn.onclick = () => {
+            document.getElementById('user-input').value = q.message;
+            sendMessage();
+        };
+        container.appendChild(btn);
+    });
+}
+
+// Toggle texte
+document.getElementById('toggle-text').addEventListener('change', (e) => {
+    showText = e.target.checked;
+    const chatBox = document.getElementById('chat-box');
+    const label = document.getElementById('toggle-label');
+    
+    if (showText) {
+        chatBox.classList.remove('hidden');
+        label.textContent = currentLanguage === 'fr' 
+            ? 'Afficher les réponses texte' 
+            : 'Show text responses';
+    } else {
+        chatBox.classList.add('hidden');
+        label.textContent = currentLanguage === 'fr' 
+            ? 'Masquer les réponses texte' 
+            : 'Hide text responses';
+    }
+});
 
 // Sélection langue
 document.getElementById('btn-fr').addEventListener('click', () => {
@@ -6,6 +51,10 @@ document.getElementById('btn-fr').addEventListener('click', () => {
     document.getElementById('btn-fr').classList.add('active');
     document.getElementById('btn-en').classList.remove('active');
     document.getElementById('user-input').placeholder = 'Posez votre question à César...';
+    document.getElementById('toggle-label').textContent = showText 
+        ? 'Afficher les réponses texte' 
+        : 'Masquer les réponses texte';
+    updateQuickQuestions();
 });
 
 document.getElementById('btn-en').addEventListener('click', () => {
@@ -13,6 +62,10 @@ document.getElementById('btn-en').addEventListener('click', () => {
     document.getElementById('btn-en').classList.add('active');
     document.getElementById('btn-fr').classList.remove('active');
     document.getElementById('user-input').placeholder = 'Ask your question to Caesar...';
+    document.getElementById('toggle-label').textContent = showText 
+        ? 'Show text responses' 
+        : 'Hide text responses';
+    updateQuickQuestions();
 });
 
 // Envoi message
@@ -27,9 +80,13 @@ async function sendMessage() {
     
     if (!message) return;
     
-    addMessage(message, 'user');
+    // Afficher message utilisateur (si texte activé)
+    if (showText) {
+        addMessage(message, 'user');
+    }
     input.value = '';
     
+    // Loading
     document.getElementById('loading').classList.remove('hidden');
     document.getElementById('send-btn').disabled = true;
     
@@ -47,10 +104,15 @@ async function sendMessage() {
         const chatData = await chatResponse.json();
         const cesarText = chatData.response;
         
-        addMessage(cesarText, 'cesar');
+        // Afficher réponse César (si texte activé)
+        if (showText) {
+            addMessage(cesarText, 'cesar');
+        }
         
         // 2. Générer vidéo parlante
-        document.getElementById('loading').textContent = 'César prépare sa réponse vidéo...';
+        document.getElementById('loading').textContent = currentLanguage === 'fr'
+            ? 'César prépare sa réponse vidéo...'
+            : 'Caesar is preparing his video response...';
         
         const videoResponse = await fetch('/.netlify/functions/talking-head', {
             method: 'POST',
@@ -67,45 +129,17 @@ async function sendMessage() {
         showVideo(videoData.videoUrl);
         
     } catch (error) {
-        addMessage('Erreur de connexion. Réessayez.', 'cesar');
+        if (showText) {
+            addMessage('Erreur de connexion. Réessayez.', 'cesar');
+        }
         console.error(error);
     }
     
     document.getElementById('loading').classList.add('hidden');
-    document.getElementById('loading').textContent = 'César réfléchit...';
+    document.getElementById('loading').textContent = currentLanguage === 'fr'
+        ? 'César réfléchit...'
+        : 'Caesar is thinking...';
     document.getElementById('send-btn').disabled = false;
-}
-
-function showVideo(videoUrl) {
-    const avatarDiv = document.querySelector('.avatar');
-    
-    // Sauvegarder l'image originale pour la remettre après
-    const originalImg = avatarDiv.querySelector('img');
-    const imgWidth = originalImg ? originalImg.offsetWidth : 200;
-    const imgHeight = originalImg ? originalImg.offsetHeight : 300;
-    
-    avatarDiv.innerHTML = `
-        <video 
-            autoplay 
-            style="
-                width: ${imgWidth}px; 
-                height: ${imgHeight}px; 
-                border-radius: 10px;
-                object-fit: cover;
-            "
-            onended="resetAvatar()"
-        >
-            <source src="${videoUrl}" type="video/mp4">
-        </video>
-    `;
-}
-
-// Fonction pour remettre l'image après la vidéo
-function resetAvatar() {
-    const avatarDiv = document.querySelector('.avatar');
-    avatarDiv.innerHTML = `
-        <img src="cesar.png" alt="César" style="max-width: 200px; border-radius: 10px;">
-    `;
 }
 
 function addMessage(text, sender) {
@@ -116,3 +150,32 @@ function addMessage(text, sender) {
     messagesDiv.appendChild(messageDiv);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
+
+function showVideo(videoUrl) {
+    const avatarDiv = document.querySelector('.avatar');
+    
+    avatarDiv.innerHTML = `
+        <video 
+            autoplay 
+            style="
+                width: 200px; 
+                height: 300px; 
+                border-radius: 10px;
+                object-fit: cover;
+            "
+            onended="resetAvatar()"
+        >
+            <source src="${videoUrl}" type="video/mp4">
+        </video>
+    `;
+}
+
+function resetAvatar() {
+    const avatarDiv = document.querySelector('.avatar');
+    avatarDiv.innerHTML = `
+        <img src="cesar.png" alt="César" style="width: 200px; height: 300px; border-radius: 10px; object-fit: cover;">
+    `;
+}
+
+// Charger les questions au démarrage
+loadQuestions();

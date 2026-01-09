@@ -9,15 +9,27 @@
 <body>
     <div class="container">
         <div class="avatar">
-            <img src="cesar.png" alt="César" style="max-width: 200px; border-radius: 10px;">
+            <img src="cesar.png" alt="César" style="width: 200px; height: 300px; border-radius: 10px; object-fit: cover;">
         </div>
         
         <div class="language-selector">
             <button id="btn-fr" class="active">Français</button>
             <button id="btn-en">English</button>
         </div>
+
+        <!-- Toggle affichage texte -->
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="toggle-text" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <span id="toggle-label">Afficher les réponses texte</span>
+        </div>
         
-        <div class="chat-box">
+        <!-- Questions prédéfinies -->
+        <div class="quick-questions" id="quick-questions"></div>
+        
+        <div class="chat-box" id="chat-box">
             <div id="messages"></div>
         </div>
         
