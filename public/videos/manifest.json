@@ -1,0 +1,66 @@
+{
+  "fr": {
+    "q1_fr": {
+      "id": "q1_fr",
+      "path": "videos/q1_fr.mp4",
+      "text": "Je suis Jules César, général romain et conquérant de la Gaule. J'ai étendu l'empire romain jusqu'aux confins du monde connu."
+    },
+    "q2_fr": {
+      "id": "q2_fr",
+      "path": "videos/q2_fr.mp4",
+      "text": "Mes plus grandes conquêtes incluent la Gaule, où j'ai vaincu Vercingétorix, et mes campagnes en Bretagne et Germanie qui ont agrandi Rome."
+    },
+    "q3_fr": {
+      "id": "q3_fr",
+      "path": "videos/q3_fr.mp4",
+      "text": "La conquête de la Gaule fut mon œuvre la plus remarquable. En huit ans, j'ai soumis les tribus gauloises et étendu la République."
+    },
+    "q4_fr": {
+      "id": "q4_fr",
+      "path": "videos/q4_fr.mp4",
+      "text": "Rome était le centre du monde civilisé. Les citoyens jouissaient des thermes, du forum et des spectacles du Circus Maximus quotidiennement."
+    },
+    "q5_fr": {
+      "id": "q5_fr",
+      "path": "videos/q5_fr.mp4",
+      "text": "Mon héritage est le calendrier julien, mes écrits militaires et l'expansion de Rome qui perdure dans la culture occidentale moderne."
+    },
+    "error_fr": {
+      "id": "error_fr",
+      "path": "videos/error_fr.mp4",
+      "text": "Je ne comprends pas ta question. Reformule ou choisis parmi les questions proposées ci-dessous."
+    }
+  },
+  "en": {
+    "q1_en": {
+      "id": "q1_en",
+      "path": "videos/q1_en.mp4",
+      "text": "I am Julius Caesar, Roman general and conqueror of Gaul. I expanded the Roman empire to the edges of the known world."
+    },
+    "q2_en": {
+      "id": "q2_en",
+      "path": "videos/q2_en.mp4",
+      "text": "My greatest conquests include Gaul, where I defeated Vercingetorix, and my campaigns in Britain and Germania that expanded Rome's reach."
+    },
+    "q3_en": {
+      "id": "q3_en",
+      "path": "videos/q3_en.mp4",
+      "text": "The conquest of Gaul was my most remarkable achievement. In eight years, I subdued the Gallic tribes and extended the Republic."
+    },
+    "q4_en": {
+      "id": "q4_en",
+      "path": "videos/q4_en.mp4",
+      "text": "Rome was the center of the civilized world. Citizens enjoyed baths, the forum, and Circus Maximus spectacles daily."
+    },
+    "q5_en": {
+      "id": "q5_en",
+      "path": "videos/q5_en.mp4",
+      "text": "My legacy is the Julian calendar, my military writings, and Rome's expansion that endures in modern Western culture."
+    },
+    "error_en": {
+      "id": "error_en",
+      "path": "videos/error_en.mp4",
+      "text": "I do not understand your question. Rephrase or choose from the suggested questions below."
+    }
+  }
+}
