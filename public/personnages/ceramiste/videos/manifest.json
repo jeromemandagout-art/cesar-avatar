@@ -1,0 +1,66 @@
+{
+  "fr": {
+    "q1_fr": {
+      "id": "q1_fr",
+      "path": "videos/q1_fr.mp4",
+      "text": "Je suis Titus Figulus, potier céramiste. Je façonne l'argile rouge au tour pour créer amphores, plats et lampes qui servent toute la cité."
+    },
+    "q2_fr": {
+      "id": "q2_fr",
+      "path": "videos/q2_fr.mp4",
+      "text": "Je centre l'argile sur mon tour, puis mes mains sculptent la forme en tournant. Pour une amphore, je monte les parois hautes et étroites progressivement."
+    },
+    "q3_fr": {
+      "id": "q3_fr",
+      "path": "videos/q3_fr.mp4",
+      "text": "La sigillée est une céramique rouge brillante avec un vernis lisse comme du verre. Je plonge la pièce dans de l'argile liquide très fine avant cuisson."
+    },
+    "q4_fr": {
+      "id": "q4_fr",
+      "path": "videos/q4_fr.mp4",
+      "text": "Je cuis mes pièces dans mon four à huit cents degrés pendant deux jours. La température parfaite solidifie l'argile sans la fissurer ni la déformer."
+    },
+    "q5_fr": {
+      "id": "q5_fr",
+      "path": "videos/q5_fr.mp4",
+      "text": "Je grave des motifs géométriques, des feuilles de vigne, des dauphins ou des scènes de chasse. Chaque décor raconte une histoire ou porte bonheur."
+    },
+    "error_fr": {
+      "id": "error_fr",
+      "path": "videos/error_fr.mp4",
+      "text": "Je ne comprends pas ta question. Reformule ou choisis parmi les questions proposées ci-dessous."
+    }
+  },
+  "en": {
+    "q1_en": {
+      "id": "q1_en",
+      "path": "videos/q1_en.mp4",
+      "text": "I am Titus Figulus, potter ceramicist. I shape red clay on the wheel to create amphorae, dishes and lamps serving the entire city."
+    },
+    "q2_en": {
+      "id": "q2_en",
+      "path": "videos/q2_en.mp4",
+      "text": "I center clay on my wheel, then my hands sculpt the form while turning. For an amphora, I progressively build high narrow walls."
+    },
+    "q3_en": {
+      "id": "q3_en",
+      "path": "videos/q3_en.mp4",
+      "text": "Sigillata is brilliant red ceramic with glass-smooth glaze. I dip pieces in very fine liquid clay before firing."
+    },
+    "q4_en": {
+      "id": "q4_en",
+      "path": "videos/q4_en.mp4",
+      "text": "I fire pieces in my kiln at eight hundred degrees for two days. Perfect temperature solidifies clay without cracking or warping."
+    },
+    "q5_en": {
+      "id": "q5_en",
+      "path": "videos/q5_en.mp4",
+      "text": "I engrave geometric patterns, vine leaves, dolphins or hunting scenes. Each decoration tells a story or brings good fortune."
+    },
+    "error_en": {
+      "id": "error_en",
+      "path": "videos/error_en.mp4",
+      "text": "I do not understand your question. Rephrase or choose from the suggested questions below."
+    }
+  }
+}
