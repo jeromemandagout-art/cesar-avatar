@@ -289,3 +289,18 @@ body[data-personnage="lampiste"] .container{
     inset 0 0 0 1px rgba(0,0,0,0.12),
     0 6px 14px rgba(0,0,0,0.28);
 }
+body[data-personnage="frequiste"] .container{
+  background:
+    radial-gradient(
+      700px 500px at 50% 30%,
+      rgba(255,255,255,0.45),
+      rgba(255,255,255,0.30) 60%,
+      rgba(255,255,255,0.20) 100%
+    ),
+    url("./personnages/frequiste/fond.png") center / cover no-repeat;
+
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.12),
+    0 6px 14px rgba(0,0,0,0.28);
+}
