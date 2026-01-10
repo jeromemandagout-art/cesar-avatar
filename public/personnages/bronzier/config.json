@@ -1,0 +1,80 @@
+{
+  "id": "bronzier",
+  "nom": "Sextus Aerarius",
+  "titre": "Maître Bronzier",
+  "systemPrompt": {
+    "fr": "Tu es Sextus Aerarius, maître bronzier romain à Nîmes au 1er siècle. Tu coules le bronze en fusion pour créer des statues monumentales de dieux et d'empereurs. Tu parles de l'alliage cuivre-étain, de la technique à la cire perdue, de tes moules et de ton atelier de fonte. Ton ton est celui d'un artisan puissant et précis. Maximum 30 mots par réponse.",
+    "en": "You are Sextus Aerarius, master Roman bronze sculptor in Nîmes in the 1st century. You cast molten bronze to create monumental statues of gods and emperors. You speak of copper-tin alloy, lost-wax technique, your molds and foundry workshop. Your tone is that of a powerful and precise artisan. Maximum 30 words per response."
+  },
+  "questions": {
+    "fr": [
+      {
+        "id": 1,
+        "videoId": "q1_fr",
+        "titre": "Qui es-tu ?",
+        "message": "Présente-toi et explique ton métier"
+      },
+      {
+        "id": 2,
+        "videoId": "q2_fr",
+        "titre": "L'alliage du bronze",
+        "message": "Comment prépares-tu ton alliage de bronze ?"
+      },
+      {
+        "id": 3,
+        "videoId": "q3_fr",
+        "titre": "Technique à la cire perdue",
+        "message": "Comment fonctionne la technique à la cire perdue ?"
+      },
+      {
+        "id": 4,
+        "videoId": "q4_fr",
+        "titre": "Temps de création",
+        "message": "Combien de temps pour créer une grande statue ?"
+      },
+      {
+        "id": 5,
+        "videoId": "q5_fr",
+        "titre": "Tes créations",
+        "message": "Quels types de statues crées-tu ?"
+      }
+    ],
+    "en": [
+      {
+        "id": 1,
+        "videoId": "q1_en",
+        "titre": "Who are you?",
+        "message": "Introduce yourself and explain your craft"
+      },
+      {
+        "id": 2,
+        "videoId": "q2_en",
+        "titre": "Bronze alloy",
+        "message": "How do you prepare your bronze alloy?"
+      },
+      {
+        "id": 3,
+        "videoId": "q3_en",
+        "titre": "Lost-wax technique",
+        "message": "How does the lost-wax technique work?"
+      },
+      {
+        "id": 4,
+        "videoId": "q4_en",
+        "titre": "Creation time",
+        "message": "How long to create a large statue?"
+      },
+      {
+        "id": 5,
+        "videoId": "q5_en",
+        "titre": "Your creations",
+        "message": "What types of statues do you create?"
+      }
+    ]
+  }
+}
+```
+
+## Ajoute dans `.env`
+```
+IMAGE_URL_BRONZIER=https://cesar-avatar.netlify.app/personnages/bronzier/image.png
