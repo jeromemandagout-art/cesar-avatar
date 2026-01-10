@@ -262,8 +262,8 @@ input:checked + .toggle-slider:before {
 body[data-personnage="mosaiste"] .container{
   background:
     linear-gradient(
-      rgba(255,255,255,0.88),
-      rgba(255,255,255,0.82)
+      rgba(255,255,255,0.70),
+      rgba(255,255,255,0.75)
     ),
     url("./personnages/mosaiste/fond.png") center / cover no-repeat;
 
