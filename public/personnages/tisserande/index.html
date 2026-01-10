@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livia Textrix - Rencontres Antiques</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <a href="../../" class="back-button">← Retour au menu</a>
+    
+    <div class="container">
+        <div class="avatar">
+            <img src="image.png" alt="Livia Textrix" style="width: 200px; height: 300px; border-radius: 10px; object-fit: cover;">
+        </div>
+        
+        <div class="language-selector">
+            <button id="btn-fr" class="active">Français</button>
+            <button id="btn-en">English</button>
+        </div>
+
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="toggle-text" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <span id="toggle-label">Afficher les réponses texte</span>
+        </div>
+        
+        <div class="quick-questions" id="quick-questions"></div>
+        
+        <div class="chat-box" id="chat-box">
+            <div id="messages"></div>
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Posez votre question à Livia...">
+            <button id="send-btn">Envoyer</button>
+        </div>
+        
+        <div id="loading" class="hidden">Livia réfléchit...</div>
+    </div>
+    
+    <script src="../avatar.js"></script>
+    <script>
+        const avatarConfig = {
+            personnage: 'tisserande',
+            basePath: './'
+        };
+        initAvatar(avatarConfig);
+    </script>
+</body>
+</html>
