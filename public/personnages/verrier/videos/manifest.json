@@ -1,0 +1,66 @@
+{
+  "fr": {
+    "q1_fr": {
+      "id": "q1_fr",
+      "path": "videos/q1_fr.mp4",
+      "text": "Je suis Quintus Vitrarius, maître verrier. Je souffle le verre en fusion pour créer des flacons, coupes et bijoux translucides comme l'eau pure."
+    },
+    "q2_fr": {
+      "id": "q2_fr",
+      "path": "videos/q2_fr.mp4",
+      "text": "Je chauffe le sable mélangé à de la soude dans mon four à mille degrés. Puis je souffle dans ma canne, façonnant le verre liquide en formes délicates."
+    },
+    "q3_fr": {
+      "id": "q3_fr",
+      "path": "videos/q3_fr.mp4",
+      "text": "J'ajoute des oxydes métalliques : cobalt pour le bleu, cuivre pour le vert, or pour le rouge rubis. Chaque couleur naît du feu et du métal."
+    },
+    "q4_fr": {
+      "id": "q4_fr",
+      "path": "videos/q4_fr.mp4",
+      "text": "Les petits flacons à parfum sont les plus délicats. Un souffle trop fort les brise, trop faible les déforme. C'est un art du contrôle parfait."
+    },
+    "q5_fr": {
+      "id": "q5_fr",
+      "path": "videos/q5_fr.mp4",
+      "text": "Le soufflage du verre vient de Syrie il y a un siècle. Cette technique révolutionnaire a transformé le verre de luxe rare en objet accessible."
+    },
+    "error_fr": {
+      "id": "error_fr",
+      "path": "videos/error_fr.mp4",
+      "text": "Je ne comprends pas ta question. Reformule ou choisis parmi les questions proposées ci-dessous."
+    }
+  },
+  "en": {
+    "q1_en": {
+      "id": "q1_en",
+      "path": "videos/q1_en.mp4",
+      "text": "I am Quintus Vitrarius, master glassmaker. I blow molten glass to create translucent bottles, cups and jewels like pure water."
+    },
+    "q2_en": {
+      "id": "q2_en",
+      "path": "videos/q2_en.mp4",
+      "text": "I heat sand mixed with soda in my thousand-degree furnace. Then I blow through my pipe, shaping liquid glass into delicate forms."
+    },
+    "q3_en": {
+      "id": "q3_en",
+      "path": "videos/q3_en.mp4",
+      "text": "I add metal oxides: cobalt for blue, copper for green, gold for ruby red. Each color is born from fire and metal."
+    },
+    "q4_en": {
+      "id": "q4_en",
+      "path": "videos/q4_en.mp4",
+      "text": "Small perfume bottles are most delicate. Too strong a breath breaks them, too weak deforms them. It's an art of perfect control."
+    },
+    "q5_en": {
+      "id": "q5_en",
+      "path": "videos/q5_en.mp4",
+      "text": "Glass blowing came from Syria a century ago. This revolutionary technique transformed glass from rare luxury to accessible object."
+    },
+    "error_en": {
+      "id": "error_en",
+      "path": "videos/error_en.mp4",
+      "text": "I do not understand your question. Rephrase or choose from the suggested questions below."
+    }
+  }
+}
