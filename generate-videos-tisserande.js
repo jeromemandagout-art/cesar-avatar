@@ -9,7 +9,7 @@ console.log('========================\n');
 
 const DID_API_KEY = process.env.DID_API_KEY;
 const IMAGE_URL = process.env.IMAGE_URL_TISSERANDE;
-const VOICE_ID = 'pNInz6obpgDQGcFmaJgB';
+const VOICE_ID = '21m00Tcm4TlvDq8ikWAM';
 
 if (!DID_API_KEY || !IMAGE_URL) {
     console.error('❌ Variables manquantes dans .env');

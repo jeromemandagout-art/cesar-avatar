@@ -1,0 +1,66 @@
+{
+  "fr": {
+    "q1_fr": {
+      "id": "q1_fr",
+      "path": "videos/q1_fr.mp4",
+      "text": "Je suis Livia Textrix, maîtresse tisserande. Je transforme la laine et le lin en tissus précieux pour les tuniques, toges et tapisseries romaines."
+    },
+    "q2_fr": {
+      "id": "q2_fr",
+      "path": "videos/q2_fr.mp4",
+      "text": "La laine vient des moutons locaux, le lin des champs d'Égypte. Je lave, carde, file puis tisse sur mon grand métier à tisser vertical."
+    },
+    "q3_fr": {
+      "id": "q3_fr",
+      "path": "videos/q3_fr.mp4",
+      "text": "J'utilise des teintures naturelles : pourpre de murex pour les riches, garance rouge, pastel bleu et safran jaune. Chaque couleur a son secret."
+    },
+    "q4_fr": {
+      "id": "q4_fr",
+      "path": "videos/q4_fr.mp4",
+      "text": "La stola brodée pour une matrone romaine demande trois mois de travail minutieux. C'est mon chef-d'œuvre, symbole d'élégance et de dignité."
+    },
+    "q5_fr": {
+      "id": "q5_fr",
+      "path": "videos/q5_fr.mp4",
+      "text": "Les matrones, les prêtresses et les familles riches commandent mes tissus. La qualité de mon tissage garantit leur statut social dans Rome."
+    },
+    "error_fr": {
+      "id": "error_fr",
+      "path": "videos/error_fr.mp4",
+      "text": "Je ne comprends pas ta question. Reformule ou choisis parmi les questions proposées ci-dessous."
+    }
+  },
+  "en": {
+    "q1_en": {
+      "id": "q1_en",
+      "path": "videos/q1_en.mp4",
+      "text": "I am Livia Textrix, master weaver. I transform wool and linen into precious fabrics for Roman tunics, togas and tapestries."
+    },
+    "q2_en": {
+      "id": "q2_en",
+      "path": "videos/q2_en.mp4",
+      "text": "Wool comes from local sheep, linen from Egyptian fields. I wash, card, spin then weave on my large vertical loom."
+    },
+    "q3_en": {
+      "id": "q3_en",
+      "path": "videos/q3_en.mp4",
+      "text": "I use natural dyes: murex purple for the wealthy, madder red, woad blue and saffron yellow. Each color has its secret."
+    },
+    "q4_en": {
+      "id": "q4_en",
+      "path": "videos/q4_en.mp4",
+      "text": "An embroidered stola for a Roman matron requires three months of meticulous work. It's my masterpiece, symbol of elegance and dignity."
+    },
+    "q5_en": {
+      "id": "q5_en",
+      "path": "videos/q5_en.mp4",
+      "text": "Matrons, priestesses and wealthy families order my fabrics. My weaving quality guarantees their social status in Rome."
+    },
+    "error_en": {
+      "id": "error_en",
+      "path": "videos/error_en.mp4",
+      "text": "I do not understand your question. Rephrase or choose from the suggested questions below."
+    }
+  }
+}
