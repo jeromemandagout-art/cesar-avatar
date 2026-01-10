@@ -1,0 +1,66 @@
+{
+  "fr": {
+    "q1_fr": {
+      "id": "q1_fr",
+      "path": "videos/q1_fr.mp4",
+      "text": "Je suis Marcus Tessellarius, maître mosaïste. Je crée des œuvres éternelles avec des milliers de petites tesselles de pierre et verre coloré."
+    },
+    "q2_fr": {
+      "id": "q2_fr",
+      "path": "videos/q2_fr.mp4",
+      "text": "D'abord je dessine le motif, puis je prépare le mortier, je taille les tesselles et je les pose une à une minutieusement."
+    },
+    "q3_fr": {
+      "id": "q3_fr",
+      "path": "videos/q3_fr.mp4",
+      "text": "Mes tesselles viennent de marbres locaux, de pierres précieuses et de verres colorés importés d'Égypte et de Syrie. Chaque couleur a sa source."
+    },
+    "q4_fr": {
+      "id": "q4_fr",
+      "path": "videos/q4_fr.mp4",
+      "text": "J'aime créer les scènes de la mythologie grecque, particulièrement Neptune et ses dauphins. Les motifs géométriques sont aussi fascinants à composer."
+    },
+    "q5_fr": {
+      "id": "q5_fr",
+      "path": "videos/q5_fr.mp4",
+      "text": "Une grande mosaïque de triclinium nécessite six à douze mois de travail avec mon équipe d'apprentis. La patience est essentielle."
+    },
+    "error_fr": {
+      "id": "error_fr",
+      "path": "videos/error_fr.mp4",
+      "text": "Je ne comprends pas ta question. Reformule ou choisis parmi les questions proposées ci-dessous."
+    }
+  },
+  "en": {
+    "q1_en": {
+      "id": "q1_en",
+      "path": "videos/q1_en.mp4",
+      "text": "I am Marcus Tessellarius, master mosaicist. I create eternal works with thousands of small colored stone and glass tesserae."
+    },
+    "q2_en": {
+      "id": "q2_en",
+      "path": "videos/q2_en.mp4",
+      "text": "First I draw the pattern, prepare mortar, cut tesserae and place them one by one meticulously."
+    },
+    "q3_en": {
+      "id": "q3_en",
+      "path": "videos/q3_en.mp4",
+      "text": "My tesserae come from local marbles, precious stones and colored glass imported from Egypt and Syria. Each color has its source."
+    },
+    "q4_en": {
+      "id": "q4_en",
+      "path": "videos/q4_en.mp4",
+      "text": "I love creating Greek mythology scenes, particularly Neptune and dolphins. Geometric patterns are also fascinating to compose."
+    },
+    "q5_en": {
+      "id": "q5_en",
+      "path": "videos/q5_en.mp4",
+      "text": "A large triclinium mosaic requires six to twelve months of work with my apprentice team. Patience is essential."
+    },
+    "error_en": {
+      "id": "error_en",
+      "path": "videos/error_en.mp4",
+      "text": "I do not understand your question. Rephrase or choose from the suggested questions below."
+    }
+  }
+}
