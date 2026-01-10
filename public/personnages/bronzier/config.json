@@ -73,8 +73,3 @@
     ]
   }
 }
-```
-
-## Ajoute dans `.env`
-```
-IMAGE_URL_BRONZIER=https://cesar-avatar.netlify.app/personnages/bronzier/image.png
