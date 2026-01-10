@@ -40,9 +40,9 @@
 
         .personnages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            max-width: 1200px;
+            max-width: 1400px;
             width: 100%;
         }
 
@@ -77,12 +77,23 @@
             font-size: 16px;
             color: #666;
             margin-bottom: 15px;
+            font-style: italic;
         }
 
         .personnage-description {
             font-size: 14px;
             color: #888;
             line-height: 1.5;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-top: 10px;
         }
 
         @media (max-width: 768px) {
@@ -111,6 +122,7 @@
             <div class="personnage-description">
                 Découvrez le conquérant de la Gaule et ses exploits militaires
             </div>
+            <span class="badge">Disponible</span>
         </div>
 
         <!-- Fresquiste -->
@@ -121,6 +133,7 @@
             <div class="personnage-description">
                 Apprenez l'art de la fresque et des pigments romains
             </div>
+            <span class="badge">Disponible</span>
         </div>
 
         <!-- Mosaïste -->
@@ -129,8 +142,9 @@
             <div class="personnage-nom">Marcus Tessellarius</div>
             <div class="personnage-titre">Maître Mosaïste</div>
             <div class="personnage-description">
-                Découvrez l'art de créer des mosaïques avec des milliers de tesselles
+                Découvrez l'art de créer des mosaïques avec des milliers de tesselles colorées
             </div>
+            <span class="badge">Disponible</span>
         </div>
 
         <!-- Tisserand -->
@@ -141,6 +155,7 @@
             <div class="personnage-description">
                 Explorez le tissage de la laine et la création de toges
             </div>
+            <span class="badge">Disponible</span>
         </div>
 
         <!-- Tabletier -->
@@ -151,6 +166,7 @@
             <div class="personnage-description">
                 Découvrez l'art de sculpter l'os et l'ivoire
             </div>
+            <span class="badge">Disponible</span>
         </div>
 
         <!-- Verrier -->
@@ -161,6 +177,7 @@
             <div class="personnage-description">
                 Apprenez la magie du verre soufflé romain
             </div>
+            <span class="badge">Disponible</span>
         </div>
 
         <!-- Céramiste -->
@@ -171,19 +188,30 @@
             <div class="personnage-description">
                 Découvrez la céramique sigillée et le tour de potier
             </div>
+            <span class="badge">Disponible</span>
+        </div>
+
+        <!-- Lampiste -->
+        <div class="personnage-card" onclick="window.location.href='personnages/lampiste/'">
+            <div class="personnage-icon">🪔</div>
+            <div class="personnage-nom">Flavius Lucernarius</div>
+            <div class="personnage-titre">Maître Lampiste</div>
+            <div class="personnage-description">
+                Découvrez l'art de fabriquer des lampes à huile en argile pour éclairer Rome
+            </div>
+            <span class="badge">Disponible</span>
+        </div>
+
+        <!-- Bronzier -->
+        <div class="personnage-card" onclick="window.location.href='personnages/bronzier/'">
+            <div class="personnage-icon">🗿</div>
+            <div class="personnage-nom">Sextus Aerarius</div>
+            <div class="personnage-titre">Maître Bronzier</div>
+            <div class="personnage-description">
+                Découvrez l'art de couler le bronze et créer des statues monumentales
+            </div>
+            <span class="badge">Disponible</span>
         </div>
     </div>
-
-    <!-- Lampiste -->
-    <div class="personnage-card" onclick="window.location.href='personnages/lampiste/'">
-        <div class="personnage-icon">🪔</div>
-        <div class="personnage-nom">Flavius Lucernarius</div>
-        <div class="personnage-titre">Maître Lampiste</div>
-        <div class="personnage-description">
-            Découvrez l'art de fabriquer des lampes à huile en argile pour éclairer Rome
-        </div>
-        <span class="badge">Disponible</span>
-    </div>
-
 </body>
 </html>
