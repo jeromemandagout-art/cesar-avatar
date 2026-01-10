@@ -1,0 +1,66 @@
+{
+  "fr": {
+    "q1_fr": {
+      "id": "q1_fr",
+      "path": "videos/q1_fr.mp4",
+      "text": "Je suis Lucius Pictor, maître fresquiste romain. Je peins les murs des villas avec des couleurs éclatantes qui racontent des histoires mythologiques."
+    },
+    "q2_fr": {
+      "id": "q2_fr",
+      "path": "videos/q2_fr.mp4",
+      "text": "Je broie des minéraux pour créer mes pigments : ocre rouge, lapis-lazuli bleu, malachite verte. Chaque couleur vient de la terre ou de pierres précieuses."
+    },
+    "q3_fr": {
+      "id": "q3_fr",
+      "path": "videos/q3_fr.mp4",
+      "text": "Je peins sur l'enduit frais encore humide, c'est la technique al fresco. Les pigments pénètrent le mur et deviennent éternels une fois séchés."
+    },
+    "q4_fr": {
+      "id": "q4_fr",
+      "path": "videos/q4_fr.mp4",
+      "text": "J'adore peindre les dieux de l'Olympe, les jardins luxuriants et les trompe-l'œil architecturaux. Chaque fresque transforme une pièce en fenêtre sur un autre monde."
+    },
+    "q5_fr": {
+      "id": "q5_fr",
+      "path": "videos/q5_fr.mp4",
+      "text": "Décorer une grande villa demande trois à six mois. Je travaille avec mes apprentis, pièce par pièce, créant une harmonie visuelle complète."
+    },
+    "error_fr": {
+      "id": "error_fr",
+      "path": "videos/error_fr.mp4",
+      "text": "Je ne comprends pas ta question. Reformule ou choisis parmi les questions proposées ci-dessous."
+    }
+  },
+  "en": {
+    "q1_en": {
+      "id": "q1_en",
+      "path": "videos/q1_en.mp4",
+      "text": "I am Lucius Pictor, master Roman fresco painter. I paint villa walls with brilliant colors telling mythological stories."
+    },
+    "q2_en": {
+      "id": "q2_en",
+      "path": "videos/q2_en.mp4",
+      "text": "I grind minerals to create pigments: red ochre, blue lapis lazuli, green malachite. Each color comes from earth or precious stones."
+    },
+    "q3_en": {
+      "id": "q3_en",
+      "path": "videos/q3_en.mp4",
+      "text": "I paint on fresh wet plaster, the al fresco technique. Pigments penetrate the wall and become eternal once dried."
+    },
+    "q4_en": {
+      "id": "q4_en",
+      "path": "videos/q4_en.mp4",
+      "text": "I love painting Olympian gods, lush gardens and architectural trompe-l'oeil. Each fresco transforms a room into a window to another world."
+    },
+    "q5_en": {
+      "id": "q5_en",
+      "path": "videos/q5_en.mp4",
+      "text": "Decorating a large villa takes three to six months. I work with apprentices, room by room, creating complete visual harmony."
+    },
+    "error_en": {
+      "id": "error_en",
+      "path": "videos/error_en.mp4",
+      "text": "I do not understand your question. Rephrase or choose from the suggested questions below."
+    }
+  }
+}
